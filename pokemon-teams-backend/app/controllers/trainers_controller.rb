@@ -5,7 +5,7 @@ class TrainersController < ApplicationController
     end
     
     def show
-        trainer = Trainer.find(params[:id])
-        render json: TrainerSerializer.new(trainer).serializable_hash
-        end
+        trainer = Trainer.find_by(id: params[:id])
+        render json: trainer, include: [:pokemons]
+    end
 end

@@ -1,9 +1,8 @@
 class PokemonSerializer
   include JSONAPI::Serializer
-  attributes :species, :nickname#, :trainer_id
+  attributes :id, :species, :nickname
 
-  set_type :pokemon
-  set_id :trainer_id
+  #set_type :pokemon
   belongs_to :trainer
 
 end
